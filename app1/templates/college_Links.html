@@ -1,0 +1,83 @@
+{% extends 'homepage.html'%}
+
+{% block content %}
+{% load static%}
+
+    <link rel="stylesheet" href="{%static 'app1/css/college_links.css'%}">
+
+<div class=" p-5 text-center ">
+
+    <!-- College links page description -->
+    <div  >
+        <h1>Welcome Back, Freeview Students</h1>
+
+        <p class=" mx-auto links_description">
+            Get ready for the semester with all the tools and resources available at our college.
+            We’re here to support you every step of the way—jump in and start your lessons by
+            accessing everything you need below.
+        </p>
+    </div>
+
+
+    <div class="  mx-auto w-50 ">
+        <h1 style="margin-bottom: 2em; margin-top: 2em;"> QUICK COLLEGE LINKS</h1>
+        <div class="d-lg-flex align-items-center justify-content-center gap-5 "> 
+
+            <div class="row student_links ">
+
+                <h3 class="P-5">STUDENTS </h3>
+                <div class="col student">
+                    <br>
+                    
+                    <button class="normal-btn btn rounded-pill">
+                    
+                        <a href="{% url 'student_login'%}"> 
+                            <i class="bi bi-backpack3-fill btn-icon"></i>
+                            <br> <p>Student portal Log In</p>
+                        </a>
+                    </button>
+                </div>
+
+                <div class="col">
+                    <br>
+                    <button class="btn normal-btn rounded-pill">
+                        <a href="https://www.office.com/">
+                            <i class="bi bi-microsoft"></i>
+                            <p>Office 365</p>
+                        </a>
+                    </button>
+                </div>
+
+                <div class="col">
+                    <br>
+
+                    <button class="btn normal-btn rounded-pill">
+                        <a href="https://openlibrary.org/">
+                            <i class="bi bi-easel-fill"></i>
+                            
+                            <P>Library & Online Resources</P>
+                        </a>
+                    </button>
+                </div>
+            </div>
+
+            <div class="staff_links">
+                <h3 class="p-5">STAFF</h3>
+                <br>
+
+                <button class="btn staff-btn rounded-pill">
+                    <a href="{%url 'Admin_login'%}">
+                        <i class="bi bi-person-fill-lock"></i>
+                        <p>Staff portal log in</p>
+                    </a>
+                </button>
+            </div>
+        </div>
+        
+
+    </div>
+
+
+</div>
+
+{% endblock %}

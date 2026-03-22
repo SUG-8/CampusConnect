@@ -1,0 +1,250 @@
+{% extends 'homepage.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+{% load static%}
+
+<link rel="stylesheet" href="{% static 'app1/css/apply.css'%}">
+<body >
+    <button class=" d-block d-lg-none btn apply-btn rounded-pill constant-apply d-flex justify-content-sm-end"> <a href="#application">Go to <br> application</a></button>
+    <div class="apply_desc  text-center mx-auto">
+        <h1>What's In It For You?</h1>
+        <p class="">
+            Free View offers an extensive and carefully developed range of courses across a broad spectrum of subject areas. The curriculum spans creative industries, digital and technology, business and enterprise, health and social care, construction and engineering, and community learning, providing learners with access to both specialist and multidisciplinary study options.
+
+            Each course is designed with a strong focus on practical, real-world application, combining industry-relevant knowledge with hands-on experience. Learners are supported in building technical ability, confidence, and transferable skills that prepare them for progression into employment, further training, or higher education.
+        </p>
+        
+
+        <h2 class="text-start learnerType p-3">Our Learner Types</h2>
+        <div class="row learner_icons gap-4 ">
+            <p class="col-lg mx-auto text-center"> <span style="font-size: 50px">&#128587;&#127997;</span> <br>School Learners (16-18)</p>
+            <p class="col-lg mx-auto text-center"><span style="font-size: 50px">&#128188;</span> <br>Adult Learners (18+)</p>
+            <p class="col-lg mx-auto text-center"> <span style="font-size: 50px">&#127891;</span> <br>University Level Learners</p>
+        </div>
+
+        <h2 class="text-start learnerType p-3">Subjects We Offer</h2>
+        <div class="row">
+            <div class="col-lg">
+            <h4>A-Levels</h4>
+            <p>English Literature</p>
+            <p>Mathematics</p>
+            <p>Biology</p>
+            <p>Psychology</p>
+            <p>Art & Design</p>
+            </div>
+
+            <div class="col-lg">
+            <h4>BTECs</h4>
+            <p>Business</p>
+            <p>Health & Social Care</p>
+            <p>Information Technology</p>
+            <p>Creative Media</p>
+            <p>Applied Science</p>
+            </div>
+
+            <div class="col-lg">
+            <h4>Adult Courses</h4>
+            <p>Access to Higher Education</p>
+            <p>Functional Skills (English & Maths)</p>
+            <p>ESOL</p>
+            <p>Professional Development Courses</p>
+            <p>Career Change & Upskilling</p>
+            </div>
+
+            <div class="col-lg">
+            <h4>University Level Courses</h4>
+            <p>Business Management</p>
+            <p>Computer Science</p>
+            <p>Health & Social Care Practice</p>
+            <p>Engineering</p>
+            <p>Creative Arts</p>
+            </div>
+
+            
+            
+        </div>
+        <h2 class="text-start learnerType p-3">Qualifications We Offer</h2>
+        <div class="row">
+            <div class="col-lg">
+            <h4>A-Levels</h4>
+            <p>A Level English Literature</p>
+            <p>A Level Mathematics</p>
+            <p>A Level Biology</p>
+            <p>A Level Psychology</p>
+            <p>A Level Art & Design</p>
+            </div>
+
+            <div class="col-lg">
+            <h4>BTECs</h4>
+            <p>BTEC National Diploma in Business</p>
+            <p>BTEC National Extended Diploma in Health & Social Care</p>
+            <p>BTEC National Diploma in Information Technology</p>
+            <p>BTEC National Diploma in Creative Media</p>
+            <p>BTEC National Diploma in Applied Science</p>
+            </div>
+
+            <div class="col-lg">
+            <h4>Adult Qualifications</h4>
+            <p>Access to Higher Education Diploma</p>
+            <p>Functional Skills English</p>
+            <p>Functional Skills Mathematics</p>
+            <p>ESOL Qualifications</p>
+            <p>Professional Development Certificates</p>
+            </div>
+
+            <div class="col-lg">
+            <h4>University Level Qualifications</h4>
+            <p>Foundation Degree (FdA / FdSc)</p>
+            <p>Higher National Certificate (HNC)</p>
+            <p>Higher National Diploma (HND)</p>
+            </div>
+
+
+    </div>
+
+
+    <div class="d-flex flex-column flex-xl-row mx-auto apply further_desc">
+
+        <div class=" disclaimer-text text-center p-4">
+            <h1 class="mb-4">Disclaimer</h1>
+            <p>By submitting this application, you acknowledge that Free View College will collect and process the personal information you provide for the purpose of managing your application, supporting your enrolment, and delivering your learning experience. All data is handled in accordance with UK GDPR and relevant data‑protection legislation. Your information will only be shared with authorised staff and trusted partners where it is necessary for educational, safeguarding, or administrative purposes.
+
+                Free View is committed to protecting your privacy, maintaining the security of your data, and ensuring transparency in how your information is used. We store your details securely, retain them only for as long as required, and give you the right to access, correct, or request the removal of your personal data where appropriate.
+
+                Your learning, wellbeing, and personal information are a priority at Free View. We take every reasonable step to ensure that your educational journey is supported, safe, and fully compliant with legal and ethical standards.
+
+                If you would like more information about how your data is used, you can refer to our full Data Protection Policy or speak to a member of our admissions team.</p>
+        </div>
+
+        <div class="container mt-5  " id="application">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card shadow">
+                        <div class="card-body">
+
+                            <h3 class="text-center mb-4">Apply to Course</h3>
+                            <div class="alert alert-success text-center shadow-sm">
+                                <p>Please enter the student's informaton below</p>
+                            </div>
+
+                            <form  method="post" novalidate>
+                                {% csrf_token %}
+
+                                <!-- First Name -->
+                                <div class="mb-3">
+                                    <label class="form-label">First Name</label>
+                                    {{ form.Student_Name|add_class:"form-control"|attr:"placeholder:First Name" }}
+                                    {% for error in form.Student_Name.errors %}
+                                        <div class="text-danger small">{{ error }}</div>
+                                    {% endfor %}
+                                </div>
+
+                                <!-- Surname -->
+                                <div class="mb-3">
+                                    <label class="form-label">Surname</label>
+                                    {{ form.Student_Surname|add_class:"form-control"|attr:"placeholder:Surname" }}
+                                    {% for error in form.Student_Surname.errors %}
+                                        <div class="text-danger small">{{ error }}</div>
+                                    {% endfor %}
+                                </div>
+
+                                <!-- Username -->
+                                <div class="mb-3">
+                                    <label class="form-label">Username</label>
+                                    {{ form.username|add_class:"form-control"|attr:"placeholder:Username" }}
+                                    {% for error in form.username.errors %}
+                                        <div class="text-danger small">{{ error }}</div>
+                                    {% endfor %}
+                                </div>
+
+                                <!-- Password -->
+                                <div class="mb-3">
+                                    <label class="form-label">Password</label>
+                                    {{ form.password|add_class:"form-control"|attr:"placeholder:Password" }}
+                                    {% for error in form.password.errors %}
+                                        <div class="text-danger small">{{ error }}</div>
+                                    {% endfor %}
+                                </div>
+
+                                <!-- Confirm Password -->
+                                <div class="mb-3">
+                                    <label class="form-label">Confirm Password</label>
+                                    {{ form.password_confirm|add_class:"form-control"|attr:"placeholder:Confirm Password" }}
+                                    {% for error in form.password_confirm.errors %}
+                                        <div class="text-danger small">{{ error }}</div>
+                                    {% endfor %}
+                                </div>
+
+                                <!-- Email -->
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    {{ form.Student_Email|add_class:"form-control"|attr:"placeholder:Email" }}
+                                    {% for error in form.Student_Email.errors %}
+                                        <div class="text-danger small">{{ error }}</div>
+                                    {% endfor %}
+                                </div>
+
+                                <!-- Course -->
+                                <div class="mb-3">
+                                    <label class="form-label">Course</label>
+                                    {{ form.Course|add_class:"form-select" }}
+                                    {% for error in form.Course.errors %}
+                                        <div class="text-danger small">{{ error }}</div>
+                                    {% endfor %}
+                                </div>
+
+                                <!-- Phone Number -->
+                                <div class="mb-3">
+                                    <label class="form-label">Phone Number</label>
+                                    {{ form.Student_Number|add_class:"form-control"|attr:"placeholder:Phone Number" }}
+                                    {% for error in form.Student_Number.errors %}
+                                        <div class="text-danger small">{{ error }}</div>
+                                    {% endfor %}
+                                </div>
+
+                                <!-- Address -->
+                                <div class="mb-3">
+                                    <label class="form-label">Address</label>
+                                    {{ form.Student_Address|add_class:"form-control"|attr:"placeholder:Address" }}
+                                    {% for error in form.Student_Address.errors %}
+                                        <div class="text-danger small">{{ error }}</div>
+                                    {% endfor %}
+                                </div>
+
+                                <!-- Date of Birth -->
+                                <div class="mb-4">
+                                    <label class="form-label">Date of Birth</label>
+                                    {{ form.Student_DOB|add_class:"form-control" }}
+                                    {% for error in form.Student_DOB.errors %}
+                                        <div class="text-danger small">{{ error }}</div>
+                                    {% endfor %}
+                                </div>
+
+                                <!-- Non-field errors -->
+                                {% if form.non_field_errors %}
+                                    <div class="alert alert-danger">
+                                        {% for error in form.non_field_errors %}
+                                            <div>{{ error }}</div>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+
+                                <div class="d-grid">
+                                    <button type="submit" class="btn apply-btn">
+                                        Next
+                                    </button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+
+
+{% endblock %}

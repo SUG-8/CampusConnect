@@ -1,0 +1,51 @@
+:root{
+    --background:#ffffff;
+    --text: #1F2933;
+
+    /* BUTTONS */
+    --buttons:  #1976D2;
+    --btnText: #ffffff;
+
+    /* CONTAINERS*/
+    --conbackground:#F4F6F8;
+    --context:#263238;
+    --heading: #0D47A1;
+}
+
+h1{
+    color: var(--heading);
+}
+
+.morefilters p{
+    padding: 0.2em;
+}
+
+.morefilters p:hover{
+    background-color: var(--buttons);
+    color: var(--btnText);
+    padding: 0.2em;
+    border-radius: 12px;
+}
+
+
+.courses-content{
+    margin-bottom: 10em;
+}
+
+a img{
+    max-width: 10em;
+    min-height: 10em;
+}
+.leaverCourse p{
+    max-width: 10em;
+}
+
+.AdultCourse p{
+    max-width: 10em;
+}
+
+.UniCourse p{
+    max-width: 10em;
+}
+
+

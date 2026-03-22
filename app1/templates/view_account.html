@@ -1,0 +1,66 @@
+{% extends 'StudentAccount.html'%}
+
+{% block content%}
+
+
+<h1>{{student.Student_Name|capfirst }}'s Account</h1>
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'app1/css/view_account.css'%}">
+
+
+<div class="">
+
+
+    <div >
+
+        <table class="table table-bordered text-center w-75 mx-auto mt-5">
+
+            <h2>Your Personal Details</h2>
+
+            <tr class="header">
+                <th>Details</th>
+                <th>Information</th>
+            </tr>
+            <tr class="Username">
+                <td>College Username</td>
+                <td>{{ student.username }}  </td>
+            </tr>
+
+
+            <tr class="Name">
+                <td>Name</td>
+                <td>{{ student.Student_Name|capfirst  }} {{ student.Student_Surname|capfirst  }} </td>
+            </tr>
+
+            <tr class="Email">
+                <td> Email</td>
+                <td>{{ student.Student_Email}} </td>
+            </tr>
+
+            <tr class="Number">
+                <td>Phone Number</td>
+                <td>{{student.Student_Number }} </td>
+            </tr>
+
+            <tr class="D.O.B">
+                <td>Date Of Birth</td>
+                <td>{{ student.Student_DOB}} </td>
+            </tr>
+
+            <tr class="Address">
+                <td>Address</td>
+                <td>{{ student.Student_Address }} </td>
+            </tr>
+        </table>
+        <div class=" alert alert-info text-black w-50 text-center mx-auto mt-5">
+            <p >If you would like to change any of the details above, please contact us at support@campusconnect.co.uk or call +44 20 7946 1287.</p>
+        </div>
+        
+
+
+    </div>
+</div>
+
+{% endblock %}

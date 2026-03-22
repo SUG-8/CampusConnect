@@ -1,0 +1,31 @@
+:root{
+    --background:#ffffff;
+    --text: #1F2933;
+
+
+    /* CONTAINERS*/
+    --conbackground:#F4F6F8;
+    --context:#263238;
+    --borders:#1976D2;
+    --heading: #0D47A1;
+
+    
+}
+
+h1, h2{
+    color: var(--heading);
+}
+
+/* List design*/
+ul{
+    list-style-type:circle;
+   
+}
+
+
+
+@media (min-width: 1200px ){
+    .opendday_desc{
+    max-width: 70%;
+}
+}

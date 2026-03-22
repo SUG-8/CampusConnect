@@ -1,0 +1,36 @@
+{% extends 'StudentAccount.html'%}
+
+
+
+{% block content%}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'app1/css/view_course.css'%}">
+
+
+<div class="">
+
+
+    <h1 class=" m-5">You've Been With Us Since {{course.start_date| date:"d/m/Y"}} {{student.Student_Name|capfirst }} &#129308; </h1>
+
+    <p class="ms-5">All your courses are listed below — take a look at what you’re currently enrolled in.</p>
+    <div >
+
+        <table class="table table-bordered text-center w-75 mx-auto mt-5">
+
+            <tr class="header">
+                <th>Your Course</th>
+                <th>Course Duration</th>
+                <th>You'll Complete This Course In</th>
+            </tr>
+
+            <tr class="body">
+                <td>{{course.name}}</td>
+                <td>{{course.duration}} years</td>
+                <td>{{end_year}}</td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends 'homepage.html' %}
+{% block content %}
+
+{% load static %}
+
+<!-- Load the About page stylesheet to style this specific page -->
+<link rel="stylesheet" href="{% static 'app1/css/about.css' %}">
+
+<!-- Main container for the About page content -->
+<div class="container ">
+
+    <!-- Mission heading to introduce the purpose of the college -->
+    <h1>Our Mission</h1>
+
+    <!-- Mission statement paragraph explaining the college’s values and goals -->
+    <p>
+        We are Freeview College — a community built on the belief that every learner deserves to feel recognised, supported, 
+        and empowered throughout their educational journey. Our mission goes far beyond delivering qualifications; we are here to champion your ambitions, 
+        nurture your confidence, and make sure your voice is valued at every stage of your development. 
+        Whether you’re a school leaver stepping into further education for the first time, an adult learner returning to study with new goals, 
+        or a university‑level student aiming to deepen your expertise, we are committed to creating an environment where you can thrive.
+
+        At Freeview College, we understand that every learner arrives with a unique story, set of strengths, and future aspirations. That’s why we focus on providing 
+        personalised support, inclusive teaching, and opportunities that help you grow academically, professionally, and personally. Your ambitions matter to us, and we work 
+        hard to ensure you have the resources, encouragement, and guidance needed to turn them into reality.
+    </p>
+
+    <!-- Section heading for the aims of the college -->
+    <h2 class="ms-5 mt-5">Our Aims</h2>
+
+    <!-- Flexbox layout to display aims in a row for better readability -->
+    <div class="d-lg-flex justify-content-center text-center gap-5 aims w-50 mx-auto ">
+        <!-- Each aim uses an emoji to make the content more engaging -->
+        <p class="p-2"> <span>&#128107;&#127997; <br></span> Inclusive learning for everyone</p>
+        <p> <span> &#129299; <br></span> Safe, welcoming spaces</p>
+        <p><span >&#128187; <br></span> Career‑focused courses</p>
+        <p> <span>&#128200;<br> </span> Support for your growth</p>
+        <p> <span> &#128188; <br></span> Strong employer links</p>
+    </div>
+
+    <!-- Section heading for promises the college makes to students -->
+    <h2 class=" mt-5 ms-5">What We Promise You</h2>
+
+    <!-- Styled box containing a list of promises with numbered icons -->
+    <div class="m-5 mx-auto text-center p-5 promises">
+        <p> 
+            <!-- Numbered icons help structure the list visually -->
+            <i class="bi bi-1-circle-fill" style="color: #0D47A1; font-size: 25px;"></i> 
+            A learning environment where you feel valued and respected
+        </p>
+        <p> 
+            <i class="bi bi-2-circle-fill" style="color: #0D47A1; font-size: 25px;"></i> 
+            Access to modern facilities, expert tutors, and hands‑on experiences
+        </p>
+        <p> 
+            <i class="bi bi-3-circle-fill" style="color: #0D47A1; font-size: 25px;"></i> 
+            Clear pathways into employment, apprenticeships, or higher education
+        </p>
+        <p> 
+            <i class="bi bi-4-circle-fill" style="color: #0D47A1; font-size: 25px;"></i> 
+            Support services that help you thrive academically and personally
+        </p>
+        <p> 
+            <i class="bi bi-5-circle-fill" style="color: #0D47A1; font-size: 25px;"></i> 
+            A college community that encourages ambition, creativity, and confidence
+        </p>
+    </div>
+
+    <!-- Final call‑to‑action section encouraging users to apply -->
+    <div class="m-4">
+        <h2> Join us at Freeview</h2>
+
+        <!-- Motivational message to inspire users to apply -->
+        <p class="w-75">
+            Your journey matters, and at Freeview College, you’ll never walk it alone. If you’re ready to study in a place that values your individuality, 
+            supports your ambitions, and gives you the tools to build a future you’re proud of, we’d love to welcome you into our community. Every course, every campus, 
+            and every member of our team is here to help you grow, achieve, and discover what you’re capable of. Take the next step toward your future — apply today and start shaping the path 
+            that’s right for you.
+        </p>
+
+        <!-- Apply button linking to the application page -->
+        <button class="btn apply-btn rounded-pill ">
+            <a href="{% url 'ApplyToCourse' %}">Apply</a>
+        </button>
+    </div>
+
+</div>
+
+{% endblock %}

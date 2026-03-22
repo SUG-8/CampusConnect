@@ -1,0 +1,34 @@
+{% extends 'homepage.html' %}
+{% block content%}
+
+<!-- Main container for the confirmation message -->
+<div class="container py-5">
+
+    <!-- Success alert box to welcome the new student -->
+    <div class="alert alert-success text-center shadow-sm">
+
+        <!-- Friendly welcome heading -->
+        <h3>Welcome🎉</h3>
+
+        <!-- Displays the student's name from their application -->
+        <p>Thank you <strong>{{ application.Student_Name|capfirst }}</strong></p>
+
+        <!-- Short message confirming they are now part of the college -->
+        <p>You're Now part of the Freeview Fam.</p>
+
+        <!-- Shows the course they applied for -->
+        <p>We can't wait for you to start your:</p>
+        <p>{{ application.Course }}</p>
+
+        <!-- Link to the student login page -->
+        <p>
+            Log in 
+            <a href="{% url 'student_login' %}" style="color: #0D47A1; font-weight: bold;">
+                HERE
+            </a>
+        </p>
+    </div>
+
+</div>
+
+{% endblock %}

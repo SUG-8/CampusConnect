@@ -1,0 +1,53 @@
+{% extends 'homepage.html' %}
+
+{% block content %}
+{% load static%}
+
+<link rel="stylesheet" href="{% static 'app1/css/contact.css'%}">
+
+<div class="container p-5  text-center">
+    <h1>Contact Us</h1>
+<p class="mb-5">We’d love to hear from you! Whether you have questions, feedback, or just want to say hello, feel free to reach out and we’ll get back to you as soon as possible.</p>
+
+
+    <div class="contact row gap-5 mx-auto d-flex justify-content-center">
+        <div class="col contact-info">
+            <h3>General Enquires</h3>
+            <p>Email: info@freeviewcollege.ac.uk</p>
+            <p>Phone: +44 (0)1234 567890</p>
+            <p>Opening Hours: Mon–Fri, 9:00 AM – 5:00 PM</p>
+        </div>
+
+        <div class="col contact-info">
+            <h3>Admissions(All courses)</h3>
+            <p>Email: admissions@freeviewcollege.ac.uk</p>
+            <p>Phone: +44 (0)1234 567891</p>
+            <p> For course applications, entry requirements, and interviews</p>
+        </div>
+
+        <div class="col contact-info">
+            <h3>Course Fees</h3>
+            <p>Email: finance@freeviewcollege.ac.uk</p>
+            <p>Phone: +44 (0)1234 567893</p>
+            <p>Tuition payments, financial aid, scholarships</p>
+        </div>
+
+        <div class="col contact-info">
+            <h3>Student Support</h3>
+            <p>Email: support@freeviewcollege.ac.uk</p>
+            <p>Phone: +44 (0)1234 567892</p>
+            <p>Services: Counselling, learning support, disability services</p>
+        </div>
+
+        <div class="col contact-info">
+            <h3>Facilities / Maintainance</h3>
+            <p>Email: facilities@freeviewcollege.ac.uk</p>
+            <p>Phone: +44 (0)1234 567896</p>
+            <p>Campus issues, room bookings, IT & AV support</p>
+        </div>
+
+    </div>
+
+
+</div>
+{% endblock%}

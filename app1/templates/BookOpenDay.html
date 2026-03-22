@@ -1,0 +1,158 @@
+{% extends 'homepage.html' %}
+{% load widget_tweaks %}
+
+
+
+
+{% block content %}
+{% load static%}
+
+<link rel="stylesheet" href="{%static 'app1/css/openday.css'%}">
+<body >
+    <div class="opendday_desc d-lg-flex p-5 mx-auto">
+        <!-- BOOK OPEN DAY DESCRIPTION-->
+        <div class="container ">
+            <h1>February Open Day 2026</h1>
+            <p> <i class="bi bi-calendar-week"></i> Date: <br> <strong>FEB 6 - FEB 25</strong> </p>
+            <p><i class="bi bi-alarm"></i> Times: <br> <strong>12:30pm - 17:30 pm</strong> or <strong>12:30pm - 5:00pm</strong>  </p>
+            <p><i class="bi bi-geo-alt"></i> Location: <br> <strong>Across all campus Locations</strong> </p>
+
+
+            <h2>WHAT TO EXPECT FROM OUR OPEN DAY</h2>
+            <p>during our open day you'll be exposed to:</p>
+
+            <div>
+                <!-- Open day expectations are listed below, this can be changed to fit Freeview-->
+                <ul>
+                    <li>Guided tours of the Free View campus, including classrooms, studios, labs, and social spaces</li>
+                    <li>Live demonstrations and sample lessons from our teaching staff</li>
+                    <li>Q&A sessions with current students about life at Free View</li>
+                    <li>Presentations on courses, entry requirements, and progression routes</li>
+                    <li>Information stands for student support, financial aid, and extracurricular activities</li>
+                    <li>Opportunities to explore accommodation options and local amenities</li>
+                    <li>Hands‑on workshops to experience the Free View learning environment</li>
+                    <li>Refreshments and networking areas to chat with staff and students</li>
+
+                </ul>
+                <h2>WHO SHOULD ATTEND?</h2>
+                <ul>
+                    <li>Students considering applying to Free View for the upcoming academic year</li>
+                    <li>Parents, guardians, or carers wanting to learn more about the college</li>
+                    <li>Mature learners exploring a return to education</li>
+                    <li>Teachers or advisors supporting students with their next steps</li>
+                    <li>Anyone curious about Free View’s courses, facilities, or community</li>
+                </ul>
+
+                <p><strong>Book now to secure your place <i class="bi bi-emoji-smile"></i>.</strong></p>
+            </div>
+
+            <img class="w-75 d-none d-lg-block" src="{% static 'app1/images/ouropenday.jpg'%}" alt="come to our open day">
+
+        </div>
+
+
+        <!-- BOOK OPEN DAY FORM-->
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-7">
+
+                    <div class="card shadow-sm">
+                        <div class="card-body p-4">
+
+                            <h2 class="text-center mb-4">Book an Open Day</h2>
+
+
+
+                            <form method="post" action="{% url 'openday' %}">
+
+                                
+
+                                {% csrf_token %}
+
+                                <!-- Name -->
+                                <div class="mb-3">
+                                    <label class="form-label">Full Name</label>
+                                    {{ form.Booking_Name|add_class:"form-control" }}
+                                    {{ form.Booking_Name.errors }}
+                                </div>
+
+
+                                <!-- Email -->
+                                <div class="mb-3">
+                                    <label class="form-label">Email Address</label>
+                                    {{ form.Booking_email|add_class:"form-control" }}
+                                    {{ form.Booking_email.errors }}
+                                </div>
+
+
+                                <!-- Date -->
+                                <div class="mb-3">
+                                    <label class="form-label">Date</label>
+                                    {{ form.Booking_Date|add_class:"form-control" }}
+                                    {{ form.Booking_Date.errors }}
+                                </div>
+
+                                <!-- Time -->
+                                <div class="mb-3">
+                                    <label class="form-label">Time Slot</label>
+                                    {{ form.Booking_Time|add_class:"form-select" }}
+                                    {{ form.Booking_Time.errors }}
+                                </div>
+
+                                <!-- Party size -->
+                                <div class="mb-3">
+                                    <label class="form-label">Group Size</label>
+                                    {{ form.Booking_Party_Size|add_class:"form-select" }}
+                                    {{ form.Booking_Party_Size.errors }}
+                                </div>
+
+                                <!-- Campus -->
+                                <div class="mb-3">
+                                    <label class="form-label">Campus Location</label>
+                                    {{ form.Booking_Location|add_class:"form-select" }}
+                                    {{ form.Booking_Location.errors }}
+                                </div>
+
+                                <!-- Additional needs -->
+                                <div class="mb-3">
+                                    <label class="form-label">Additional Needs</label>
+                                    {{ form.Booking_Additional_Needs|add_class:"form-select" }}
+                                </div>
+
+                                <hr>
+
+                                <!-- Add-ons -->
+                                <h5 class="mb-3">Optional Add-ons</h5>
+
+                                <div class="mb-3">
+                                    {% for checkbox in form.addons %}
+                                        <div class="form-check">
+                                            {{ checkbox.tag }}
+                                            <label class="form-check-label">
+                                                {{ checkbox.choice_label }}
+                                            </label>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+
+                                <div class="alert alert-info small">
+                                    Open Day entry is <strong>free</strong>.  
+                                    Paid add-ons will redirect you to payment. <br>
+                                    An additional <strong>10% discount</strong>  on your merch pack when combined with a lunch voucher
+                                </div>
+
+                                <button type="submit" class="btn openday-btn w-100">
+                                    Submit Booking
+                                </button>
+
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+ {% endblock %}

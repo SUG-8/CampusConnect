@@ -1,0 +1,42 @@
+:root{
+    --background:#ffffff;
+    --text: #1F2933;
+
+
+    /* CONTAINERS*/
+    --Cbackground: #F4F6F8 ;
+    --Ctext:#263238;
+    --heading: #0D47A1;
+}
+h1,h2,h3{
+    color: var(--heading);
+}
+
+.aims p{
+    color: var(--Ctext);
+    
+    border-radius: 50%;
+    transition: 0.3s;
+}
+span{
+    font-size: 50px;
+    
+}
+
+.aims p:hover{
+    transform: scale(1.2);
+}
+
+li{
+    list-style-type: square  ;
+    font-size: large;
+}
+
+.promises p{
+    transition: 0.3s;
+}
+
+.promises p:hover{
+    transform: scale(1.3);
+}
+

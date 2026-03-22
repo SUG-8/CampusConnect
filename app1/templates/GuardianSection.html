@@ -1,0 +1,68 @@
+{% extends 'homepage.html' %}
+{% load widget_tweaks %}
+
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow">
+                <div class="card-body">
+
+                    <h3 class="text-center mb-4 " style="color: #0D47A1;">Guardian Information</h3>
+
+                    <form method="post" novalidate>
+                        {% csrf_token %}
+
+                        <!-- Guardian Name -->
+                        <div class="mb-3">
+                            <label class="form-label">First Name</label>
+                            {{ form.Guardian_Name|add_class:"form-control"|attr:"placeholder:First Name" }}
+                            {{ form.Guardian_Name.errors }}
+                        </div>
+
+                        
+
+                        <!-- Guardian Surname -->
+                        <div class="mb-3">
+                            <label class="form-label">Surname</label>
+                            {{ form.Guardian_Surname|add_class:"form-control"|attr:"placeholder:Surname" }}
+                            {{ form.Guardian_Surname.errors }}
+                        </div>
+
+                        <!-- Guardian Relationship with Student -->
+                        <div class="mb-3">
+                            <label class="form-label">Relationship To Student </label>
+                            {{ form.Guardian_Relationship_to_student|add_class:"form-control" }}
+                            {{ form.Guardian_Relationship_to_student.errors }}
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            {{ form.Guardian_Email|add_class:"form-control"|attr:"placeholder:Email" }}
+                            {{ form.Guardian_Email.errors }}
+                        </div>
+
+                        <!-- Address -->
+                        <div class="mb-4">
+                            <label class="form-label">Address</label>
+                            {{ form.Guardian_Address|add_class:"form-control"|attr:"placeholder:Address" }}
+                            {{ form.Guardian_Address.errors }}
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">
+                                Submit Application
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

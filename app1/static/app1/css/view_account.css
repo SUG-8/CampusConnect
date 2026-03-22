@@ -1,0 +1,14 @@
+:root{
+    --background:#ffffff;
+    --text: #1F2933;
+
+    /* BUTTONS */
+    --buttons:  #1976D2;;
+    --logoutbuttons: #0D47A1;
+    --btnText: #ffffff;
+
+    /* CONTAINERS*/
+    --conbackground:#263238;
+    --context:#ffffff;
+    --heading: #0D47A1;
+}

@@ -1,0 +1,18 @@
+{% extends 'homepage.html' %}
+
+
+{% block content%}
+
+    
+
+<div class="container py-5">
+    <div class="alert alert-success text-center shadow-sm">
+        <h3>Booking Confirmed #{{booking.Booking_ID}} 🎉 </h3>
+        <p>Thank you <strong>{{ booking.Booking_Name|capfirst  }}</strong></p>
+        <p>Your open day booking has been confirmed.</p>
+        <p>We can't wait to see you On:</p>
+        <p>{{booking.Booking_Date}} at {{booking.Booking_Time}}  {{booking.Booking_Location}}</p>
+
+    </div>
+</div>
+{% endblock %}

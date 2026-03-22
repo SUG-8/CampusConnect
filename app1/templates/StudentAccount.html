@@ -1,0 +1,103 @@
+
+<head>
+    {% load static%}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{%static 'app1/css/student.css'%}">
+</head>
+
+<body class=" container">
+    <header class="header container">
+
+            <!-- BELOW IS TH ECODE USED TO CREATE CAMPUS CONNECT's HEADER-->
+            <div class="navbar d-flex align-items-center justify-content-between">
+
+                <!-- Logo -->
+                <p><img src="{% static 'app1/images/logo.jpg' %}" alt="CampusConnect Logo" style="max-width: 75px;"></p>
+
+                <!-- Hamburger button (visible only on small screens) -->
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Collapsible content -->
+                <div class="collapse d-lg-flex flex-column align-items-end" id="mobileMenu">
+
+                    <!-- Top buttons -->
+                    
+
+                    <!-- Navigation items -->
+                    <nav class="nav-items d-flex flex-lg-row gap-4 flex-column">
+
+                        <a class="line-link text-center" href="{% url 'StudentAccount'  student.Student_ID %}"> <i class="bi bi-house-door"></i> <br> Home</a>
+
+                    
+                        <a  class="line-link text-center" href="{% url 'view_course' course.id %}"> <i class="bi bi-book "></i> <br> View Your Courses</a>
+
+                        <a class="line-link text-center" href="{% url 'view_account'  %}"> <i class="bi bi-person-circle "></i> <br> View Your Account</a>
+
+                        <div class="top-actions d-flex justify-content-end mb-2">
+                            <button class="btn normal-btn rounded-pill"><a href="{% url 'student_logout' %}">Log Out </a></button> 
+                        </div>
+        
+
+                    </nav>
+                </div>
+
+    </header>  
+    
+    {% block content %}
+
+            </div>
+
+            <div class="dashboard-text ">
+
+                <div class="  text-center mt-5">
+                    <h1 class="">Welcome {{student.Student_Name|capfirst  }} To Your Student Dashboard</h1>
+                </div>
+
+                <div class="dash-desc">
+                    <p>
+                        Hi {{ student.Student_Name }}, welcome to your personal student dashboard. This space is designed to give you everything you need to stay organised and confident throughout your time at Freeview College. Here, you can keep track of your responsibilities, stay updated on important tasks, and access the tools that support your learning journey.  
+                        You’ll be able to view your enrolled courses, check your progress, and manage your account details all in one place. We’re excited to have you as part of the Freeview community — let’s make your experience here inspiring, productive, and uniquely yours.
+                    </p>
+
+                    <h2 class="mt-5">What This Dashboard Is For</h2> 
+                    <p> This dashboard gives you quick access to the essential parts of your student profile.
+                        From here, you can view your personal account details, update certain information, and check 
+                        the course you’re currently enrolled in. It’s designed to keep everything simple, organised, and easy 
+                        to manage so you always know where you stand and what information Freeview College has on record for you. 
+                    </p> 
+
+                    <h3 class="p-3"> Use this Dashborad To:</h3>
+                    
+                    <div class="dashboard-list d-flex  "> 
+                        <p class="p-3 text-center mx-auto">View your personal account information</p> 
+                        <p class="p-3 text-center mx-auto">Edit selected details on your student profile</p> 
+                        <p class="p-3 text-center mx-auto">See the course you are enrolled in</p> 
+                        <p class="p-3 text-center mx-auto">Stay updated with your basic student information</p> 
+                    </div>
+
+                </div>
+                    
+          {% endblock%}      
+        
+
+
+
+
+   
+     
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('.nav-item.dropdown > .dropdown-toggle').forEach(item => {
+            item.addEventListener('click', (e) => {
+            if (window.innerWidth < 992) {
+                e.preventDefault();
+                item.parentElement.classList.toggle('show');
+            }
+            });
+        });
+    </script>
+</body>

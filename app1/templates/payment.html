@@ -1,0 +1,79 @@
+{% extends 'homepage.html' %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Payment</title>
+
+</head>
+<body class="bg-light">
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+
+                    <h2 class="text-center mb-4">Payment Required</h2>
+
+                    <p class="text-center">
+                        Thank you for your booking.
+                    </p>
+
+                    <p class="text-center text-muted">
+                        Booking reference: <strong>#{{ booking_id }}</strong>
+                    </p>
+
+                    <hr>
+
+                    <!-- ADD-ONS SUMMARY -->
+                    <h5 class="mb-3">Selected Add-ons</h5>
+
+                    {% if addons %}
+                        <ul class="list-group mb-3">
+                            {% for addon in addons %}
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    {{ addon.name }}
+                                    <span>£{{ addon.price }}</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+
+                        <p class="text-end fs-5">
+                            <strong>Total: £{{ total }}</strong>
+                        </p>
+                    {% else %}
+                        <p class="text-muted text-center">
+                            No add-ons selected.
+                        </p>
+                    {% endif %}
+
+                    <hr>
+
+                    
+
+                    
+
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <button type="submit" class="btn btn-success w-100">
+                            Pay Now
+                        </button>
+                    </form>
+
+
+                    <a href="{% url 'homepage' %}" class="btn btn-link w-100 mt-2">
+                        Cancel and return home
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+{% endblock %}

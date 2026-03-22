@@ -1,0 +1,202 @@
+{% extends 'homepage.html' %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block content %}
+
+<header>
+    <!-- Link to the CSS file that styles the All Courses page -->
+    <link rel="stylesheet" href="{% static 'app1/css/all_courses.css' %}">
+</header>
+
+<div class="all_courses p-5">
+    <!-- Main wrapper for the entire courses page with padding -->
+
+    <div class="text-start mb-5">
+        <!-- Page heading section -->
+        <h1 class="text-center">View All Our Courses</h1>
+    </div>
+
+    <div class="coursespage container d-flex flex-wrap gap-5">
+        <!-- Main layout: left side filters + right side course cards -->
+
+        <!-- LEFT FILTERS -->
+        <div class="morefilters ">
+            <!-- Static list of qualifications offered (non-clickable) -->
+            <h2>All the Qualifications We Offer</h2>
+            <h6>(non-clickable)</h6>
+            <br>
+            <p>A-Levels</p>
+            <p>BTECs</p>
+            <p>Access to Higher Education Diploma</p>
+            <p>Functional Skills English</p>
+            <p>Functional Skills Mathematics</p>
+            <p>ESOL Qualifications</p>
+            <p>Professional Development Certificates</p>
+            <p>Foundation Degree (FdA / FdSc)</p>
+            <p>Higher National Certificate (HNC)</p>
+            <p>Higher National Diploma (HND)</p>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="rightfilters col-12 col-md-7">
+            <!-- Contains radio filters + course cards -->
+
+            <!-- RADIO BUTTONS -->
+            <div class="mb-4 d-flex flex-wrap gap-3 ">
+                <!-- Radio buttons allow users to filter courses by learner type -->
+                <div class="form-check ">
+                    <input class="form-check-input" type="radio" name="userType" value="all" checked>
+                    <label class="form-check-label">All</label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="userType" value="school">
+                    <label class="form-check-label">School Leaver</label>
+                </div>
+
+                <div class="form-check ">
+                    <input class="form-check-input" type="radio" name="userType" value="adult">
+                    <label class="form-check-label">Adult</label>
+                </div>
+
+                <div class="form-check ">
+                    <input class="form-check-input" type="radio" name="userType" value="university">
+                    <label class="form-check-label">University</label>
+                </div>
+            </div>
+
+            <h6 class="mb-5">
+                <!-- Helpful note explaining what happens when a course image is clicked -->
+                (Once image is clicked, you'll be redirected to the application page, there you'll get a better understanding on the courses and Freeview college)
+            </h6>
+
+            <!-- COURSE CONTENT -->
+            <div class="courses-content d-flex flex-wrap justify-content-start gap-4">
+                <!-- All course cards are displayed here and filtered using JavaScript -->
+
+                <!-- SCHOOL COURSES -->
+                <!-- Each course card includes an image + title and links to the application page -->
+                <div class="course leaverCourse" data-category="school">
+                    <a href="{% url 'ApplyToCourse'%}"><img src="{% static 'app1/images/leaverscourse.jpg'%}" alt=""></a>
+                    <p class="text-center">A Level English Literature</p>
+                </div>
+
+                <div class="course leaverCourse" data-category="school">
+                    <a href="{% url 'ApplyToCourse'%}"><img src="{% static 'app1/images/leaverscourse.jpg'%}" alt=""></a>
+                    <p class="text-center">A Level Mathematics</p>
+                </div>
+
+                <div class="course leaverCourse" data-category="school">
+                    <a href="{% url 'ApplyToCourse'%}"><img src="{% static 'app1/images/leaverscourse.jpg'%}" alt=""></a>
+                    <p class="text-center">A Level Biology</p>
+                </div>
+
+                <div class="course leaverCourse" data-category="school">
+                    <a href="{% url 'ApplyToCourse'%}"><img src="{% static 'app1/images/leaverscourse.jpg'%}" alt=""></a>
+                    <p class="text-center">A Level Psychology</p>
+                </div>
+
+                <div class="course leaverCourse" data-category="school">
+                    <a href="{% url 'ApplyToCourse'%}"><img src="{% static 'app1/images/leaverscourse.jpg'%}" alt=""></a>
+                    <p class="text-center">A Level Art & Design</p>
+                </div>
+
+                <div class="course leaverCourse" data-category="school">
+                    <a href="{% url 'ApplyToCourse'%}"><img src="{% static 'app1/images/leaverscourse.jpg'%}" alt=""></a>
+                    <p class="text-center">BTEC National Diploma in Business</p>
+                </div>
+
+                <div class="course leaverCourse" data-category="school">
+                    <a href="{% url 'ApplyToCourse'%}"><img src="{% static 'app1/images/leaverscourse.jpg'%}" alt=""></a>
+                    <p class="text-center">BTEC National Extended Diploma in Health & Social Care</p>
+                </div>
+
+                <div class="course leaverCourse" data-category="school">
+                    <a href="{% url 'ApplyToCourse'%}"><img src="{% static 'app1/images/leaverscourse.jpg'%}" alt=""></a>
+                    <p class="text-center">BTEC National Diploma in Information Technology</p>
+                </div>
+
+                <div class="course leaverCourse" data-category="school">
+                    <a href="{% url 'ApplyToCourse'%}"><img src="{% static 'app1/images/leaverscourse.jpg'%}" alt=""></a>
+                    <p class="text-center">BTEC National Diploma in Creative Media</p>
+                </div>
+
+                <div class="course leaverCourse" data-category="school">
+                    <a href="{% url 'ApplyToCourse'%}"><img src="{% static 'app1/images/leaverscourse.jpg'%}" alt=""></a>
+                    <p class="text-center">BTEC National Diploma in Applied Science</p>
+                </div>
+
+                <!-- ADULT COURSES -->
+                <div class="course AdultCourse" data-category="adult">
+                    <a href="{% url 'ApplyToCourse'%}"><img src="{% static 'app1/images/adultcourse.jpg'%}" alt=""></a>
+                    <p class="text-center">ESOL</p>
+                </div>
+
+                <div class="course AdultCourse" data-category="adult">
+                    <a href="{% url 'ApplyToCourse'%}"><img src="{% static 'app1/images/adultcourse.jpg'%}" alt=""></a>
+                    <p class="text-center">Professional Development Courses</p>
+                </div>
+
+                <div class="course AdultCourse" data-category="adult">
+                    <a href="{% url 'ApplyToCourse'%}"><img src="{% static 'app1/images/adultcourse.jpg'%}" alt=""></a>
+                    <p class="text-center">Career Change & Upskilling</p>
+                </div>
+
+                <!-- UNIVERSITY COURSES -->
+                <div class="course UniCourse" data-category="university">
+                    <a href="{% url 'ApplyToCourse'%}"><img src="{% static 'app1/images/UNIcourse.jpg'%}" alt=""></a>
+                    <p class="text-center">(FdA / FdSc) Business Management</p>
+                </div>
+
+                <div class="course UniCourse" data-category="university">
+                    <a href="{% url 'ApplyToCourse'%}"><img src="{% static 'app1/images/UNIcourse.jpg'%}" alt=""></a>
+                    <p class="text-center">(FdA / FdSc) Computer Science</p>
+                </div>
+
+                <div class="course UniCourse" data-category="university">
+                    <a href="{% url 'ApplyToCourse'%}"><img src="{% static 'app1/images/UNIcourse.jpg'%}" alt=""></a>
+                    <p class="text-center">(HNC) Health & Social Care Practice</p>
+                </div>
+
+                <div class="course UniCourse" data-category="university">
+                    <a href="{% url 'ApplyToCourse'%}"><img src="{% static 'app1/images/UNIcourse.jpg'%}" alt=""></a>
+                    <p class="text-center">(HNC) Engineering</p>
+                </div>
+
+                <div class="course UniCourse" data-category="university">
+                    <a href="{% url 'ApplyToCourse'%}"><img src="{% static 'app1/images/UNIcourse.jpg'%}" alt=""></a>
+                    <p class="text-center">(HND) Creative Arts</p>
+                </div>
+
+            </div>
+
+<!-- FILTERING SCRIPT -->
+<script>
+    // Select all radio buttons and all course cards
+    const radios = document.querySelectorAll('input[name="userType"]');
+    const courses = document.querySelectorAll('.courses-content .course');
+
+    // Add event listener to each radio button
+    radios.forEach(radio => {
+        radio.addEventListener('change', () => {
+
+            // If "All" is selected, show every course
+            if (radio.value === 'all') {
+                courses.forEach(card => card.classList.remove('d-none'));
+
+            } else {
+                // Otherwise, show only courses matching the selected category
+                courses.forEach(card => {
+                    if (card.dataset.category === radio.value) {
+                        card.classList.remove('d-none');
+                    } else {
+                        card.classList.add('d-none');
+                    }
+                });
+            }
+        });
+    });
+</script>
+
+{% endblock %}

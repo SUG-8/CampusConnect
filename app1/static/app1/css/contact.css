@@ -1,0 +1,30 @@
+:root{
+    --background:#ffffff;
+    --text: #1F2933;
+
+    /* BUTTONS */
+    --buttons:  #1976D2;
+    --applybutton: #2E7D32;
+    --opendaybuttons: #0D47A1;
+    --btnText: #ffffff;
+
+    /* CONTAINERS*/
+    --Cbackground: #0000001c ;
+    --Ctext:#263238 ;
+    --heading: #0D47A1;
+}
+
+h1, h2{
+    color: var(--heading);
+}
+
+.contact-info{
+    background-color: var(--Cbackground);
+    color: var(--Ctext);
+    max-width: fit-content;
+    border-radius: 15%;
+}
+
+.contact-info h3{
+    color: var(--heading);
+}

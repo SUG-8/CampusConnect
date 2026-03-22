@@ -1,0 +1,61 @@
+:root{
+    --background:#ffffff;
+    --text: #1F2933;
+
+
+    /* CONTAINERS*/
+    --conbackground:#F4F6F8 ;
+    --context:#263238 ;
+    --borders:#1976D2;
+    --heading: #0D47A1;
+
+    
+}
+
+
+
+h1, h2, h3, h4{
+    color: var(--heading);
+}
+
+.apply_desc{
+    padding: 5em;
+}
+
+
+
+.learner_icons p{
+    background-color: var(--borders);
+    padding: 2em;
+    border-radius: 50%;
+    max-width: fit-content;
+    transition: 0.3s;
+    color: #ffffff;
+    
+} 
+
+.learner_icons p:hover{
+    transform: scale(1.2);
+}
+
+.constant-apply{
+    position: fixed;
+}
+
+.apply{
+    margin-top: 5em;
+}
+
+
+@media (min-width: 1200px ){
+    .apply_desc{
+    max-width: 70%;
+    }
+
+
+    .disclaimer-text{
+        max-width: 30%;
+    }
+}
+
+    

@@ -1,0 +1,76 @@
+{% extends 'homepage.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<body class="bg-light">
+<!-- Light background to keep the login page clean and easy to read -->
+
+<div class="container mt-5 h-75">
+    <!-- Main container to center the login form and give spacing at the top -->
+
+    <div class="row justify-content-center">
+        <!-- Centers the login card horizontally on the page -->
+
+        <div class="col-md-6 col-lg-5">
+            <!-- Sets the width of the login form on medium and large screens -->
+
+            <div class="card shadow">
+                <!-- Card layout with a shadow to make the login box stand out -->
+
+                <div class="card-body">
+                    <!-- Holds all the content inside the card -->
+
+                    <h3 class="text-center mb-4">Admin Staff Login</h3>
+                    <!-- Page title centered at the top -->
+
+                    <p class="text-center">
+                        (This login page is reserved for authorised admin staff only.)
+                    </p>
+                    <!-- Small note explaining who should use this login -->
+
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}">
+                                {{ message }}
+                            </div>
+                            <!-- Displays success or error messages from Django -->
+                        {% endfor %}
+                    {% endif %}
+
+                    <form method="post" novalidate>
+                        {% csrf_token %}
+                        <!-- CSRF token for security to prevent cross‑site request forgery -->
+
+                        <!-- Username -->
+                        <div class="mb-3">
+                            <!-- Spacing below the input field -->
+                            <label class="form-label">Username</label>
+                            <!-- Label for the username field -->
+                            <input type="text" name="username" class="form-control" placeholder="Enter your username" required>
+                            <!-- Username input box -->
+                        </div>
+
+                        <!-- Password -->
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <!-- Label for the password field -->
+                            <input type="password" name="password" class="form-control" placeholder="Enter your password" required>
+                            <!-- Password input box -->
+                        </div>
+
+                        <div class="d-grid">
+                            <!-- Makes the button stretch full width -->
+                            <button type="submit" class="btn btn-primary">Login</button>
+                            <!-- Login button to submit the form -->
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

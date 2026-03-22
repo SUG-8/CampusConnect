@@ -1,0 +1,92 @@
+{% extends 'homepage.html' %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'app1/css/campus.css'%}">
+
+<div class="container">
+
+    <h1>Check Out Our Campuses</h1>
+
+    <p>Each of our campuses offers its own unique atmosphere, community, and academic focus. Campus life is shaped by vibrant student spaces, 
+        supportive staff, and a mix of social and learning activities that help you feel at home from day one. Different locations specialise
+        in different courses so you can study in an environment built around your subject — whether that’s creative arts, technology, business, 
+        or hands‑on vocational training. You’ll find a full breakdown of what each campus offers, including facilities, course options, and student 
+        experiences, in the sections below.</p>
+
+    <div class="campus-container mx-auto text-start">
+
+        <div class="campus_1 campus p-4 d-lg-flex gap-5 justify-content-start">
+            <div>
+                <h2>Campus 1</h2>
+                <p><strong>Address:</strong> 12 Green Street, Birmingham, UK</p>
+                <p><strong>Phone:</strong> +44 20 1234 5678</p>
+
+            </div>
+            <div>
+                <p><strong>Courses Offered:</strong></p>
+            <p>
+                <li>A Level English Literature<br></li>
+                <li>A Level Mathematics<br></li>
+                <li>A Level Biology<br></li>
+                <li>A Level Psychology<br></li>
+                <li>A Level Art & Design</li>
+            </p>
+            </div>
+            
+            
+            
+        </div>
+
+        <div class="campus_2 campus p-4 d-lg-flex gap-5 justify-content-start">
+
+            <div>
+                <h2>Campus 2</h2>
+                
+                <p><strong>Address:</strong> 45 Riverside Road, Birmingham, UK</p>
+                <p><strong>Phone:</strong> +44 121 9876 5432</p>
+            </div>
+
+            <div>
+                <p><strong>Courses Offered:</strong></p>
+            <p>
+                <li>BTEC National Diploma in Business<br></li>
+                <li>BTEC National Extended Diploma in Health & Social Care<br></li>
+                <li>BTEC National Diploma in Information Technology<br></li>
+                <li>BTEC National Diploma in Creative Media<br></li>
+                <li>BTEC National Diploma in Applied Science</li>
+            </p>
+            </div>
+            
+        </div>
+
+        <div class="campus_3 campus p-4 d-lg-flex gap-5 justify-content-start">
+            <div>
+                <h2>Campus 3</h2>
+                <p><strong>Courses Offered:</strong></p>
+                
+                <p><strong>Address:</strong> 78 College Avenue, Birmingham, UK</p>
+                <p><strong>Phone:</strong> +44 161 4567 890</p>
+            </div>
+
+            <div>
+                <p>
+                <li>Access to Higher Education Diploma<br></li>
+                <li>Functional Skills English<br></li>
+                <li>Functional Skills Mathematics<br></li>
+                <li>ESOL Qualifications<br></li>
+                <li>Professional Development Certificates<br></li>
+                <li>Foundation Degree (FdA / FdSc)<br></li>
+                <li>Higher National Certificate (HNC)<br></li>
+                <li>Higher National Diploma (HND)</li>
+            </p>
+            </div>
+
+            
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

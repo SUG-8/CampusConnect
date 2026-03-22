@@ -1,0 +1,75 @@
+:root{
+    --background:#ffffff;
+    --text: #1F2933;
+
+
+    /* CONTAINERS*/
+    --conbackground:#F4F6F8;
+    --context:#263238;
+    --borders:#1976D2;
+    --heading: #0D47A1;
+
+    --staff:#263238;
+}
+
+h1{
+    color: var(--heading);
+}
+h3{
+    color: var(--heading);
+}
+
+/* description*/
+
+@media (min-width: 1000px){
+
+    .links_description{
+        max-width: 40%;
+    }
+   
+}
+
+/* Student links design*/
+.student_links{
+    border: solid 2px var(--borders);
+    margin-bottom: 3em;
+    
+}
+
+.student{
+    margin-bottom: 5em;
+}
+
+/* Staff design*/
+
+.staff_links{
+    border: solid 2px var(--staff);
+    margin-bottom: 3em;
+}
+
+.staff_links button{
+    margin-bottom: 5em;
+}
+
+.staff_links h3{
+    color: var(--staff);
+}
+/* staff butons*/
+.staff-btn{
+    background-color : var(--staff);
+    color: var(--btnText);
+    transition: 0.3s;
+}
+
+.staff-btn:hover{
+    font-weight: bold;
+    border-color: var(--staff);
+    color: var(--staff);
+
+}
+.staff-btn a:hover{
+    font-weight: bold;
+    border-color: var(--staff);
+    color: var(--staff);
+
+}
